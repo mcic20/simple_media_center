@@ -7,7 +7,7 @@ namespace simple_media_center.Repositories
         public void GetFile()
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Pictures|*.png";
+            ofd.Filter = "Pictures|*.png; *.jpeg; *.jpg";
             ofd.Multiselect = false;
             ofd.ShowDialog();
             Picture picture = new Picture();

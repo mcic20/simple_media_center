@@ -63,6 +63,7 @@
             btnVideo.TabIndex = 2;
             btnVideo.Text = "Watch video";
             btnVideo.UseVisualStyleBackColor = true;
+            btnVideo.Click += btnVideo_Click;
             // 
             // btnMusic
             // 

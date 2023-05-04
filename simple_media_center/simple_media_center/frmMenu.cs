@@ -15,5 +15,13 @@ namespace simple_media_center
             Close();
 
         }
+
+        private void btnVideo_Click(object sender, EventArgs e)
+        {
+            Video_sound.MainWindow mainWindow = new Video_sound.MainWindow();
+            Hide();
+            mainWindow.ShowDialog();
+            Close();
+        }
     }
 }
