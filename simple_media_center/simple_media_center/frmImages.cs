@@ -1,4 +1,5 @@
-﻿using System;
+﻿using simple_media_center.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,11 @@ namespace simple_media_center
             InitializeComponent();
         }
 
+        private void btnAddPic_Click(object sender, EventArgs e)
+        {
+            PictureRepository pictureRepository = new PictureRepository();
+            pictureRepository.GetFile();
+
+        }
     }
 }

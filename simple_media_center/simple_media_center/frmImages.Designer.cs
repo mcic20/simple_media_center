@@ -31,9 +31,11 @@
             pictureBox1 = new PictureBox();
             btnLastImage = new Button();
             btnNextImage = new Button();
-            dataGridView1 = new DataGridView();
+            dgvPictures = new DataGridView();
+            btnAddPic = new Button();
+            lblTest = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPictures).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -64,30 +66,52 @@
             btnNextImage.Text = ">";
             btnNextImage.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvPictures
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(832, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(165, 372);
-            dataGridView1.TabIndex = 3;
+            dgvPictures.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPictures.Location = new Point(832, 12);
+            dgvPictures.Name = "dgvPictures";
+            dgvPictures.RowHeadersWidth = 51;
+            dgvPictures.RowTemplate.Height = 29;
+            dgvPictures.Size = new Size(165, 372);
+            dgvPictures.TabIndex = 3;
+            // 
+            // btnAddPic
+            // 
+            btnAddPic.Location = new Point(832, 390);
+            btnAddPic.Name = "btnAddPic";
+            btnAddPic.Size = new Size(94, 29);
+            btnAddPic.TabIndex = 4;
+            btnAddPic.Text = "Add";
+            btnAddPic.UseVisualStyleBackColor = true;
+            btnAddPic.Click += btnAddPic_Click;
+            // 
+            // lblTest
+            // 
+            lblTest.AutoSize = true;
+            lblTest.Location = new Point(879, 471);
+            lblTest.Name = "lblTest";
+            lblTest.Size = new Size(50, 20);
+            lblTest.TabIndex = 5;
+            lblTest.Text = "label1";
             // 
             // frmImages
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1009, 520);
-            Controls.Add(dataGridView1);
+            Controls.Add(lblTest);
+            Controls.Add(btnAddPic);
+            Controls.Add(dgvPictures);
             Controls.Add(btnNextImage);
             Controls.Add(btnLastImage);
             Controls.Add(pictureBox1);
             Name = "frmImages";
             Text = "Images";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPictures).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -95,6 +119,8 @@
         private PictureBox pictureBox1;
         private Button btnLastImage;
         private Button btnNextImage;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPictures;
+        private Button btnAddPic;
+        private Label lblTest;
     }
 }
