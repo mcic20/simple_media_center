@@ -10,9 +10,9 @@
         <Button x:Name="btnPlay" Content="&gt;" HorizontalAlignment="Left" Margin="351,433,0,0" VerticalAlignment="Top" FontSize="16" Width="29" FontWeight="Bold"/>
         <Button x:Name="btnOpen" Content="Open File" HorizontalAlignment="Left" Margin="679,437,0,0" VerticalAlignment="Top" Height="21" Width="86" Click="btnOpen_Click"/>
         <MediaElement x:Name="elementVideo" HorizontalAlignment="Left" Height="334" Margin="36,38,0,0" VerticalAlignment="Top" Width="741"/>
-        <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Margin="33,440,0,0" VerticalAlignment="Top" Width="120"/>
+        <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Margin="33,440,0,0" VerticalAlignment="Top" Width="120" ValueChanged="sliderVolume_ValueChanged"/>
         <Label x:Name="lvlVoumeStatic" Content="Volume:" HorizontalAlignment="Left" Margin="31,415,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblVolumeChanging" Content="Label" HorizontalAlignment="Left" Margin="84,415,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtVolume" HorizontalAlignment="Left" Height="16" Margin="84,420,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="30"/>
 
     </Grid>
 </Window>

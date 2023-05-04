@@ -1,7 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Video_sound
 {
@@ -13,6 +12,8 @@ namespace Video_sound
         public MainWindow()
         {
             InitializeComponent();
+            txtVolume.Text = "";
+            sliderVolume.Value = 5;
         }
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
@@ -21,13 +22,22 @@ namespace Video_sound
             ofd.Filter = "Videos|*.mp4; *.mkv; *.webm; *.avi";
             ofd.Multiselect = false;
             ofd.ShowDialog();
-            try {
+            try
+            {
                 elementVideo.Source = new Uri(ofd.FileName);
             }
             catch
             {
 
             }
+
+
+        }
+
+        private void sliderVolume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            elementVideo.Volume = sliderVolume.Value;
+            txtVolume.Text = ((sliderVolume.Value) * 10).ToString();
         }
     }
 }
