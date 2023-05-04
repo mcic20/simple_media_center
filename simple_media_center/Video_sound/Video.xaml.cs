@@ -2,13 +2,16 @@
 using System;
 using System.Windows;
 
+
 namespace Video_sound
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+   
     public partial class MainWindow : Window
     {
+        bool ISPLAYING;
         public MainWindow()
         {
             InitializeComponent();
@@ -25,6 +28,7 @@ namespace Video_sound
             try
             {
                 elementVideo.Source = new Uri(ofd.FileName);
+                ISPLAYING = true;
             }
             catch
             {
@@ -38,6 +42,23 @@ namespace Video_sound
         {
             elementVideo.Volume = sliderVolume.Value;
             txtVolume.Text = ((sliderVolume.Value) * 10).ToString();
+        }
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+            if (elementVideo.Source != null)
+            {
+                if (ISPLAYING)
+                {
+                    elementVideo.SpeedRatio = 0;
+                    ISPLAYING = false;
+                }
+                else
+                {
+                    elementVideo.SpeedRatio = 1;
+                    ISPLAYING = true;
+                }
+            }
         }
     }
 }
