@@ -29,6 +29,7 @@ namespace Video_sound
             {
                 elementVideo.Source = new Uri(ofd.FileName);
                 ISPLAYING = true;
+                btnPlay.Content = "||";
             }
             catch
             {
@@ -52,11 +53,13 @@ namespace Video_sound
                 {
                     elementVideo.SpeedRatio = 0;
                     ISPLAYING = false;
+                    btnPlay.Content = ">";
                 }
                 else
                 {
                     elementVideo.SpeedRatio = 1;
                     ISPLAYING = true;
+                    btnPlay.Content = "||";
                 }
             }
         }
