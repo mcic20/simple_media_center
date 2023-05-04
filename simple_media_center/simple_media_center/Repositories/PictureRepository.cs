@@ -1,7 +1,4 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using simple_media_center.Classes;
-using System.Security.Cryptography;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using simple_media_center.Classes;
 
 namespace simple_media_center.Repositories
 {
@@ -19,8 +16,9 @@ namespace simple_media_center.Repositories
             File.AppendAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\simple_media_center\\Data\\PicturePaths.txt", newPic + Environment.NewLine);
         }
 
-        public List<Picture> GetPictures() {
-            List <Picture> pictures = new List<Picture>();
+        public List<Picture> GetPictures()
+        {
+            List<Picture> pictures = new List<Picture>();
             StreamReader sr = new StreamReader("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\simple_media_center\\Data\\PicturePaths.txt");
             var lines = sr.ReadToEnd().Split("\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             foreach (var line in lines)

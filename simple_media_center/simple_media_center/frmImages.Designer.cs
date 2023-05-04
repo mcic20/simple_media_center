@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            btnLastImage = new Button();
-            btnNextImage = new Button();
             dgvPictures = new DataGridView();
             btnAddPic = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -46,32 +44,17 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // btnLastImage
-            // 
-            btnLastImage.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLastImage.Location = new Point(229, 464);
-            btnLastImage.Name = "btnLastImage";
-            btnLastImage.Size = new Size(94, 44);
-            btnLastImage.TabIndex = 1;
-            btnLastImage.Text = "<";
-            btnLastImage.UseVisualStyleBackColor = true;
-            // 
-            // btnNextImage
-            // 
-            btnNextImage.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNextImage.Location = new Point(372, 464);
-            btnNextImage.Name = "btnNextImage";
-            btnNextImage.Size = new Size(94, 44);
-            btnNextImage.TabIndex = 2;
-            btnNextImage.Text = ">";
-            btnNextImage.UseVisualStyleBackColor = true;
-            // 
             // dgvPictures
             // 
+            dgvPictures.AllowUserToAddRows = false;
+            dgvPictures.AllowUserToDeleteRows = false;
+            dgvPictures.AllowUserToResizeColumns = false;
+            dgvPictures.AllowUserToResizeRows = false;
             dgvPictures.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPictures.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvPictures.Location = new Point(806, 12);
+            dgvPictures.MultiSelect = false;
             dgvPictures.Name = "dgvPictures";
+            dgvPictures.ReadOnly = true;
             dgvPictures.RowHeadersWidth = 51;
             dgvPictures.RowTemplate.Height = 29;
             dgvPictures.Size = new Size(191, 372);
@@ -92,13 +75,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1009, 520);
+            ClientSize = new Size(1009, 452);
             Controls.Add(btnAddPic);
             Controls.Add(dgvPictures);
-            Controls.Add(btnNextImage);
-            Controls.Add(btnLastImage);
             Controls.Add(pictureBox1);
             Name = "frmImages";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Images";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvPictures).EndInit();
@@ -108,8 +90,6 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button btnLastImage;
-        private Button btnNextImage;
         private DataGridView dgvPictures;
         private Button btnAddPic;
     }

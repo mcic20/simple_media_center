@@ -18,7 +18,6 @@ namespace simple_media_center
             PictureRepository pictureRepository = new PictureRepository();
             pictureRepository.GetFile();
             dgvPictures.Refresh();
-
         }
 
         private void dgvPictures_CellClick(object sender, DataGridViewCellEventArgs e)
