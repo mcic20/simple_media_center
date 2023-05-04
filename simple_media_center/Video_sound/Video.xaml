@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Video_sound"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="btnPlay" Content="&gt;" HorizontalAlignment="Left" Margin="337,399,0,0" VerticalAlignment="Top" FontSize="16" Width="29" FontWeight="Bold"/>
-        <Button x:Name="btnOpen" Content="Open File" HorizontalAlignment="Left" Margin="665,403,0,0" VerticalAlignment="Top" Height="21" Width="86"/>
-        <MediaElement x:Name="mediaVideo" HorizontalAlignment="Left" Height="334" Margin="36,38,0,0" VerticalAlignment="Top" Width="741"/>
-        <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Margin="19,406,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lvlVoumeStatic" Content="Volume:" HorizontalAlignment="Left" Margin="17,381,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblVolumeChanging" Content="Label" HorizontalAlignment="Left" Margin="70,381,0,0" VerticalAlignment="Top"/>
+        Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-6">
+        <Button x:Name="btnPlay" Content="&gt;" HorizontalAlignment="Left" Margin="351,433,0,0" VerticalAlignment="Top" FontSize="16" Width="29" FontWeight="Bold"/>
+        <Button x:Name="btnOpen" Content="Open File" HorizontalAlignment="Left" Margin="679,437,0,0" VerticalAlignment="Top" Height="21" Width="86" Click="btnOpen_Click"/>
+        <MediaElement x:Name="elementVideo" HorizontalAlignment="Left" Height="334" Margin="36,38,0,0" VerticalAlignment="Top" Width="741"/>
+        <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Margin="33,440,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lvlVoumeStatic" Content="Volume:" HorizontalAlignment="Left" Margin="31,415,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblVolumeChanging" Content="Label" HorizontalAlignment="Left" Margin="84,415,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

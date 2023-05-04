@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Win32;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Video_sound
 {
@@ -23,6 +13,21 @@ namespace Video_sound
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Videos|*.mp4; *.mkv; *.webm; *.avi";
+            ofd.Multiselect = false;
+            ofd.ShowDialog();
+            try {
+                elementVideo.Source = new Uri(ofd.FileName);
+            }
+            catch
+            {
+
+            }
         }
     }
 }
