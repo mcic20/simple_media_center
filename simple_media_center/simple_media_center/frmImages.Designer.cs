@@ -42,6 +42,7 @@
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(776, 426);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -68,12 +69,14 @@
             // dgvPictures
             // 
             dgvPictures.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPictures.Location = new Point(832, 12);
+            dgvPictures.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvPictures.Location = new Point(806, 12);
             dgvPictures.Name = "dgvPictures";
             dgvPictures.RowHeadersWidth = 51;
             dgvPictures.RowTemplate.Height = 29;
-            dgvPictures.Size = new Size(165, 372);
+            dgvPictures.Size = new Size(191, 372);
             dgvPictures.TabIndex = 3;
+            dgvPictures.CellDoubleClick += dgvPictures_CellClick;
             // 
             // btnAddPic
             // 

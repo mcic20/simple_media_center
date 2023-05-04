@@ -8,7 +8,6 @@ namespace simple_media_center.Classes
 {
     public class Picture
     {
-        public string Name { get; set; }
         public string Path { get; set; }
     }
 }
