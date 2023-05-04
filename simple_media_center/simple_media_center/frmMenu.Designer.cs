@@ -39,7 +39,7 @@
             // 
             lblWelcome.AutoSize = true;
             lblWelcome.Font = new Font("Snap ITC", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblWelcome.Location = new Point(110, 9);
+            lblWelcome.Location = new Point(119, 9);
             lblWelcome.Name = "lblWelcome";
             lblWelcome.Size = new Size(564, 39);
             lblWelcome.TabIndex = 0;
