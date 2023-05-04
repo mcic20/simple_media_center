@@ -36,5 +36,13 @@ namespace simple_media_center
             }
 
         }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            Hide();
+            frmMenu.ShowDialog();
+            Close();
+        }
     }
 }

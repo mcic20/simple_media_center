@@ -31,6 +31,7 @@
             pictureBox1 = new PictureBox();
             dgvPictures = new DataGridView();
             btnAddPic = new Button();
+            btnMenu = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPictures).BeginInit();
             SuspendLayout();
@@ -51,13 +52,13 @@
             dgvPictures.AllowUserToResizeColumns = false;
             dgvPictures.AllowUserToResizeRows = false;
             dgvPictures.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPictures.Location = new Point(806, 12);
+            dgvPictures.Location = new Point(806, 58);
             dgvPictures.MultiSelect = false;
             dgvPictures.Name = "dgvPictures";
             dgvPictures.ReadOnly = true;
             dgvPictures.RowHeadersWidth = 51;
             dgvPictures.RowTemplate.Height = 29;
-            dgvPictures.Size = new Size(191, 372);
+            dgvPictures.Size = new Size(191, 326);
             dgvPictures.TabIndex = 3;
             dgvPictures.CellDoubleClick += dgvPictures_CellClick;
             // 
@@ -71,11 +72,22 @@
             btnAddPic.UseVisualStyleBackColor = true;
             btnAddPic.Click += btnAddPic_Click;
             // 
+            // btnMenu
+            // 
+            btnMenu.Location = new Point(817, 12);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new Size(165, 29);
+            btnMenu.TabIndex = 5;
+            btnMenu.Text = "Go back to menu";
+            btnMenu.UseVisualStyleBackColor = true;
+            btnMenu.Click += btnMenu_Click;
+            // 
             // frmImages
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1009, 452);
+            Controls.Add(btnMenu);
             Controls.Add(btnAddPic);
             Controls.Add(dgvPictures);
             Controls.Add(pictureBox1);
@@ -92,5 +104,6 @@
         private PictureBox pictureBox1;
         private DataGridView dgvPictures;
         private Button btnAddPic;
+        private Button btnMenu;
     }
 }

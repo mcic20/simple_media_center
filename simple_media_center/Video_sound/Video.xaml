@@ -1,11 +1,11 @@
-﻿<Window x:Class="Video_sound.MainWindow"
+﻿<Window x:Name="windowVideo" x:Class="Video_sound.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Video_sound"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Videos" Height="500" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,0,-6">
         <Button x:Name="btnPlay" Content="&gt;" HorizontalAlignment="Center" Margin="0,394,0,0" VerticalAlignment="Top" FontSize="24" Width="64" FontWeight="Bold" Click="btnPlay_Click" Height="49"/>
         <Button x:Name="btnOpen" Content="Open File" HorizontalAlignment="Left" Margin="679,413,0,0" VerticalAlignment="Top" Height="21" Width="86" Click="btnOpen_Click"/>
