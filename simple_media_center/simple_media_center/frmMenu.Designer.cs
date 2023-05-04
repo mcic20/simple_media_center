@@ -81,6 +81,7 @@
             btnPhotos.TabIndex = 4;
             btnPhotos.Text = "Open photos";
             btnPhotos.UseVisualStyleBackColor = true;
+            btnPhotos.Click += btnPhotos_Click;
             // 
             // frmMenu
             // 
