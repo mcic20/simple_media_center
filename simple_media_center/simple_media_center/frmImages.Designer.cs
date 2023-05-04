@@ -33,7 +33,6 @@
             btnNextImage = new Button();
             dgvPictures = new DataGridView();
             btnAddPic = new Button();
-            lblTest = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPictures).BeginInit();
             SuspendLayout();
@@ -86,21 +85,11 @@
             btnAddPic.UseVisualStyleBackColor = true;
             btnAddPic.Click += btnAddPic_Click;
             // 
-            // lblTest
-            // 
-            lblTest.AutoSize = true;
-            lblTest.Location = new Point(879, 471);
-            lblTest.Name = "lblTest";
-            lblTest.Size = new Size(50, 20);
-            lblTest.TabIndex = 5;
-            lblTest.Text = "label1";
-            // 
             // frmImages
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1009, 520);
-            Controls.Add(lblTest);
             Controls.Add(btnAddPic);
             Controls.Add(dgvPictures);
             Controls.Add(btnNextImage);
@@ -111,7 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvPictures).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -121,6 +109,5 @@
         private Button btnNextImage;
         private DataGridView dgvPictures;
         private Button btnAddPic;
-        private Label lblTest;
     }
 }

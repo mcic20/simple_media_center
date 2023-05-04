@@ -1,4 +1,5 @@
-﻿using simple_media_center.Repositories;
+﻿using simple_media_center.Classes;
+using simple_media_center.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,8 @@ namespace simple_media_center
         {
             PictureRepository pictureRepository = new PictureRepository();
             pictureRepository.GetFile();
-
+            List<Picture> pictures = pictureRepository.GetPictures();  
+            dgvPictures.DataSource = pictures;
         }
     }
 }

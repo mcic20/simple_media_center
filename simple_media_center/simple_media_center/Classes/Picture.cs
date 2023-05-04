@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace simple_media_center.Classes
 {
-    internal class Picture
+    public class Picture
     {
         public string Name { get; set; }
         public string Path { get; set; }
