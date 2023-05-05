@@ -32,6 +32,8 @@
             dgvPictures = new DataGridView();
             btnAddPic = new Button();
             btnMenu = new Button();
+            btnDeleteAll = new Button();
+            btnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvPictures).BeginInit();
             SuspendLayout();
@@ -64,7 +66,7 @@
             // 
             // btnAddPic
             // 
-            btnAddPic.Location = new Point(832, 390);
+            btnAddPic.Location = new Point(806, 390);
             btnAddPic.Name = "btnAddPic";
             btnAddPic.Size = new Size(94, 29);
             btnAddPic.TabIndex = 4;
@@ -82,11 +84,32 @@
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
             // 
+            // btnDeleteAll
+            // 
+            btnDeleteAll.Location = new Point(906, 433);
+            btnDeleteAll.Name = "btnDeleteAll";
+            btnDeleteAll.Size = new Size(94, 29);
+            btnDeleteAll.TabIndex = 6;
+            btnDeleteAll.Text = "Clear List";
+            btnDeleteAll.UseVisualStyleBackColor = true;
+            btnDeleteAll.Click += btnDeleteAll_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(906, 390);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 7;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
             // frmImages
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1009, 452);
+            ClientSize = new Size(1009, 474);
+            Controls.Add(btnDelete);
+            Controls.Add(btnDeleteAll);
             Controls.Add(btnMenu);
             Controls.Add(btnAddPic);
             Controls.Add(dgvPictures);
@@ -105,5 +128,7 @@
         private DataGridView dgvPictures;
         private Button btnAddPic;
         private Button btnMenu;
+        private Button btnDeleteAll;
+        private Button btnDelete;
     }
 }

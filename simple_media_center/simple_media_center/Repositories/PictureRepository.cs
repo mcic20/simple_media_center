@@ -30,5 +30,9 @@ namespace simple_media_center.Repositories
             sr.Close();
             return pictures;
         }
+
+        public void DeleteAll() {
+         File.WriteAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\simple_media_center\\Data\\PicturePaths.txt","");
+        }
     }
 }

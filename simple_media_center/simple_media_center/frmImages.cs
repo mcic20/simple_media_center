@@ -17,7 +17,8 @@ namespace simple_media_center
         {
             PictureRepository pictureRepository = new PictureRepository();
             pictureRepository.GetFile();
-            dgvPictures.Refresh();
+            List<Picture> pictures = pictureRepository.GetPictures();
+            dgvPictures.DataSource= pictures;
         }
 
         private void dgvPictures_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -43,6 +44,15 @@ namespace simple_media_center
             Hide();
             frmMenu.ShowDialog();
             Close();
+        }
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+            PictureRepository pictureRepository = new PictureRepository();
+            pictureRepository.DeleteAll();
+            pictureBox1.Image = null;
+            List<Picture> pictures = pictureRepository.GetPictures();
+            dgvPictures.DataSource = pictures;
         }
     }
 }
