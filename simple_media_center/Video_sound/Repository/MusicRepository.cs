@@ -4,7 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using Video_sound.Classes;
 
-namespace Video_sound.Repositories
+namespace Video_sound.Repository
 {
     public class MusicRepository
     {

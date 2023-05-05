@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Video_sound"
         mc:Ignorable="d"
-        Title="Music" Height="241" Width="494">
+        Title="Music" Height="241" Width="494" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid Margin="0,0,0,-6">
             <Button x:Name="btnPlayMusic" Content="&gt;" HorizontalAlignment="Center" Margin="0,149,0,0" VerticalAlignment="Top" FontSize="24" Width="64" FontWeight="Bold" Click="btnPlay_Click" Height="49"/>
@@ -15,7 +15,7 @@
             <Label x:Name="lblVoumeMusic" Content="Volume:" HorizontalAlignment="Left" Margin="26,140,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txtVolumeMusic" HorizontalAlignment="Left" Height="16" Margin="78,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
             <Label Content="Now playing:" HorizontalAlignment="Left" Margin="108,90,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="txtSong" HorizontalAlignment="Center" Margin="0,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="txtSong" HorizontalAlignment="Left" Margin="192,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
         </Grid>
     </Grid>
 </Window>

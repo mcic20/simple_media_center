@@ -4,7 +4,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using Video_sound.Classes;
-using Video_sound.Repositories;
 
 namespace Video_sound
 {

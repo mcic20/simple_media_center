@@ -62,6 +62,6 @@ namespace Video_sound
                     btnPlay.Content = "||";
                 }
             }
-        }
+        }     
     }
 }
