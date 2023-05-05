@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Video_sound.Repositories
+namespace Video_sound.Classes
 {
-    internal class MusicRepository
+    public class Song
     {
+        public string MusicPath { get; set; }
     }
 }

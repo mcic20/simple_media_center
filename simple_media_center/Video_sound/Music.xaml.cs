@@ -1,65 +1,65 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
-
+using System.Windows.Controls;
+using System.Windows.Forms;
+using Video_sound.Classes;
+using Video_sound.Repositories;
 
 namespace Video_sound
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Music.xaml
     /// </summary>
-   
-    public partial class MusicWindow : Window
+    public partial class Music : Window
     {
         bool ISPLAYING;
-        public MusicWindow()
+        public Music()
         {
             InitializeComponent();
-            txtVolume.Text = "";
-            sliderVolume.Value = 5;
+            txtVolumeMusic.Text = "";
+            sliderVolumeMusic.Value = 5;
         }
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Videos|*.mp4; *.mkv; *.webm; *.avi";
+            ofd.Filter = "Music|*.mp3; *.flac; *.wav; *.mp4";
             ofd.Multiselect = false;
             ofd.ShowDialog();
             try
             {
-                elementVideo.Source = new Uri(ofd.FileName);
+                elementMusic.Source = new Uri(ofd.FileName);
                 ISPLAYING = true;
-                btnPlay.Content = "||";
+                btnPlayMusic.Content = "||";
             }
             catch
             {
 
             }
-
-
         }
 
         private void sliderVolume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            elementVideo.Volume = sliderVolume.Value;
-            txtVolume.Text = ((sliderVolume.Value) * 10).ToString();
+            elementMusic.Volume = sliderVolumeMusic.Value;
+            txtVolumeMusic.Text = ((sliderVolumeMusic.Value) * 10).ToString();
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
-            if (elementVideo.Source != null)
+            if (elementMusic.Source != null)
             {
                 if (ISPLAYING)
                 {
-                    elementVideo.SpeedRatio = 0;
+                    elementMusic.SpeedRatio = 0;
+                    btnPlayMusic.Content = ">";
                     ISPLAYING = false;
-                    btnPlay.Content = ">";
                 }
                 else
                 {
-                    elementVideo.SpeedRatio = 1;
+                    elementMusic.SpeedRatio = 1;
                     ISPLAYING = true;
-                    btnPlay.Content = "||";
+                    btnPlayMusic.Content = "||";
                 }
             }
         }

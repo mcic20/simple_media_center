@@ -73,6 +73,7 @@
             btnMusic.TabIndex = 3;
             btnMusic.Text = "Play audio";
             btnMusic.UseVisualStyleBackColor = true;
+            btnMusic.Click += btnMusic_Click;
             // 
             // btnPhotos
             // 

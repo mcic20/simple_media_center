@@ -8,19 +8,4 @@
     <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Music.xaml.cs" />
-    <Compile Remove="Repositories\MusicRepository.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Remove="Music.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Music.xaml" />
-    <Resource Include="Music.xaml.cs" />
-    <Resource Include="Repositories\MusicRepository.cs" />
-  </ItemGroup>
-
 </Project>

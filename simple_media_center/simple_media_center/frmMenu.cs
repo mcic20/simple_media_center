@@ -23,5 +23,13 @@ namespace simple_media_center
             mainWindow.ShowDialog();
             Close();
         }
+
+        private void btnMusic_Click(object sender, EventArgs e)
+        {
+            Video_sound.Music mainWindow = new Video_sound.Music();
+            Hide(); 
+            mainWindow.ShowDialog();
+            Close();
+        }
     }
 }
