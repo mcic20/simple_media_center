@@ -18,7 +18,7 @@ namespace simple_media_center
             PictureRepository pictureRepository = new PictureRepository();
             pictureRepository.GetFile();
             List<Picture> pictures = pictureRepository.GetPictures();
-            dgvPictures.DataSource= pictures;
+            dgvPictures.DataSource = pictures;
         }
 
         private void dgvPictures_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -52,6 +52,15 @@ namespace simple_media_center
             pictureRepository.DeleteAll();
             pictureBox1.Image = null;
             List<Picture> pictures = pictureRepository.GetPictures();
+            dgvPictures.DataSource = pictures;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string path = dgvPictures.SelectedCells[0].Value.ToString();
+            PictureRepository pictureRepository2 = new PictureRepository();
+            pictureRepository2.DeleteSelected(path);
+            List<Picture> pictures = pictureRepository2.GetPictures();
             dgvPictures.DataSource = pictures;
         }
     }
