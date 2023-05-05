@@ -8,4 +8,17 @@
     <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Music.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Music.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Music.xaml" />
+    <EmbeddedResource Include="Music.xaml.cs" />
+  </ItemGroup>
+
 </Project>

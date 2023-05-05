@@ -39,25 +39,9 @@ namespace simple_media_center.Repositories
         public void DeleteSelected(string a)
         {
             string str = File.ReadAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\simple_media_center\\Data\\PicturePaths.txt");
-            int b = 0;
-            StreamReader sr = new StreamReader("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\simple_media_center\\Data\\PicturePaths.txt");
-            var lines = sr.ReadToEnd().Split("\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (lines[i] == a)
-                {
-                    b++;
-                }
-            }
-            sr.Close();
-            do
-            {
                 string str2 = "";
                 str = str.Replace(a, str2);
                 File.WriteAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\simple_media_center\\Data\\PicturePaths.txt", str);
-                b--;
-            }
-            while (b > 1);
         }
     }
 }
