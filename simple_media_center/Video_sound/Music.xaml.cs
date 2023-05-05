@@ -30,6 +30,7 @@ namespace Video_sound
             try
             {
                 elementMusic.Source = new Uri(ofd.FileName);
+                txtSong.Text = ofd.SafeFileName;
                 ISPLAYING = true;
                 btnPlayMusic.Content = "||";
             }

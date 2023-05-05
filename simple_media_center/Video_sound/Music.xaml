@@ -14,6 +14,8 @@
             <Slider x:Name="sliderVolumeMusic" HorizontalAlignment="Left" Margin="28,165,0,0" VerticalAlignment="Top" Width="120" ValueChanged="sliderVolume_ValueChanged"/>
             <Label x:Name="lblVoumeMusic" Content="Volume:" HorizontalAlignment="Left" Margin="26,140,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="txtVolumeMusic" HorizontalAlignment="Left" Height="16" Margin="78,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30"/>
+            <Label Content="Now playing:" HorizontalAlignment="Left" Margin="108,90,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtSong" HorizontalAlignment="Center" Margin="0,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         </Grid>
     </Grid>
 </Window>
