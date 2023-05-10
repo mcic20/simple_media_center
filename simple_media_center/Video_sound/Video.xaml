@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Video_sound"
         mc:Ignorable="d"
-        Title="Videos" Height="500" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,0,-6">
-        <Button x:Name="btnPlay" Content="&gt;" HorizontalAlignment="Center" Margin="0,394,0,0" VerticalAlignment="Top" FontSize="24" Width="64" FontWeight="Bold" Click="btnPlay_Click" Height="49"/>
-        <Button x:Name="btnOpen" Content="Open File" HorizontalAlignment="Left" Margin="679,413,0,0" VerticalAlignment="Top" Height="21" Width="86" Click="btnOpen_Click"/>
-        <MediaElement x:Name="elementVideo" HorizontalAlignment="Left" Height="334" Margin="36,38,0,0" VerticalAlignment="Top" Width="741" UnloadedBehavior="Manual"/>
+        Title="Videos" Height="500" Width="800" WindowStartupLocation="CenterScreen" MouseWheel="windowVideo_MouseWheel">
+    <Grid Margin="0,0,0,-6" MouseWheel="Grid_MouseWheel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="399*"/>
+            <ColumnDefinition Width="401*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnPlay" Content="&gt;" HorizontalAlignment="Left" Margin="368,394,0,0" VerticalAlignment="Top" FontSize="24" Width="64" FontWeight="Bold" Click="btnPlay_Click" Height="49" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnOpen" Content="Open File" HorizontalAlignment="Left" Margin="280,413,0,0" VerticalAlignment="Top" Height="21" Width="86" Click="btnOpen_Click" Grid.Column="1"/>
+        <MediaElement x:Name="elementVideo" HorizontalAlignment="Left" Height="334" Margin="36,38,0,0" VerticalAlignment="Top" Width="741" UnloadedBehavior="Manual" Grid.ColumnSpan="2"/>
         <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Margin="33,440,0,0" VerticalAlignment="Top" Width="120" ValueChanged="sliderVolume_ValueChanged"/>
         <Label x:Name="lvlVoumeStatic" Content="Volume:" HorizontalAlignment="Left" Margin="31,415,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtVolume" HorizontalAlignment="Left" Height="16" Margin="84,420,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="30"/>

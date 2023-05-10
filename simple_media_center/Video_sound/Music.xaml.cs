@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using Video_sound.Classes;
+using Video_sound.Repository;
 
 namespace Video_sound
 {
@@ -16,33 +17,31 @@ namespace Video_sound
         public Music()
         {
             InitializeComponent();
-            txtVolumeMusic.Text = "";
+            MusicRepository musicRepository = new MusicRepository();
+            try
+            {
+                dgvMusic.ItemsSource = musicRepository.GetMusic();
+            }
+            catch {
+
+                System.Windows.MessageBox.Show("Error in reading MusicPaths file. Please delete data from that file.");
+            }
+            txtVolume.Text = "";
             sliderVolumeMusic.Value = 5;
         }
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Music|*.mp3; *.flac; *.wav; *.mp4";
-            ofd.Multiselect = false;
-            ofd.ShowDialog();
-            try
-            {
-                elementMusic.Source = new Uri(ofd.FileName);
-                txtSong.Text = ofd.SafeFileName;
-                ISPLAYING = true;
-                btnPlayMusic.Content = "||";
-            }
-            catch
-            {
-
-            }
+            MusicRepository songRepository = new MusicRepository();
+            songRepository.AddMusic();
+            List<Song> songs = songRepository.GetMusic();
+            dgvMusic.ItemsSource = songs;
         }
 
         private void sliderVolume_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             elementMusic.Volume = sliderVolumeMusic.Value;
-            txtVolumeMusic.Text = ((sliderVolumeMusic.Value) * 10).ToString();
+            txtVolume.Text = ((sliderVolumeMusic.Value) * 10).ToString();
         }
 
         private void btnPlay_Click(object sender, RoutedEventArgs e)
@@ -60,6 +59,19 @@ namespace Video_sound
                     elementMusic.SpeedRatio = 1;
                     ISPLAYING = true;
                     btnPlayMusic.Content = "||";
+                }
+            }
+            else
+            {
+                try
+                {
+                    Song song = new Song();
+                    song = dgvMusic.SelectedItem as Song;
+                    elementMusic.Source= new Uri(song.MusicPath);
+                    txtSong.Text = song.Name;
+                }
+                catch {
+
                 }
             }
         }

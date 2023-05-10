@@ -9,5 +9,6 @@ namespace Video_sound.Classes
     public class Song
     {
         public string MusicPath { get; set; }
+        public string Name { get; set; }
     }
 }
