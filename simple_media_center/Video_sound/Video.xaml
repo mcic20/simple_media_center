@@ -16,7 +16,7 @@
         <MediaElement x:Name="elementVideo" HorizontalAlignment="Left" Height="334" Margin="36,38,0,0" VerticalAlignment="Top" Width="741" UnloadedBehavior="Manual" Grid.ColumnSpan="2"/>
         <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Margin="33,440,0,0" VerticalAlignment="Top" Width="120" ValueChanged="sliderVolume_ValueChanged"/>
         <Label x:Name="lvlVoumeStatic" Content="Volume:" HorizontalAlignment="Left" Margin="31,415,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtVolume" HorizontalAlignment="Left" Height="16" Margin="84,420,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="30"/>
+        <TextBox x:Name="txtVolume" HorizontalAlignment="Left" Height="16" Margin="84,420,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="30" IsReadOnly="True"/>
 
     </Grid>
 </Window>
