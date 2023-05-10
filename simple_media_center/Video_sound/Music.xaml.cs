@@ -75,5 +75,22 @@ namespace Video_sound
                 }
             }
         }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Song song = new Song();
+            song = dgvMusic.SelectedItem as Song;
+            string del = $"{song.Name};{song.MusicPath}";
+            MusicRepository musicRepository = new MusicRepository();
+            musicRepository.DeleteSelected(del);
+            dgvMusic.ItemsSource = musicRepository.GetMusic();
+        }
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+            MusicRepository songRepository = new MusicRepository();
+            songRepository.DeleteAll();
+            dgvMusic.ItemsSource = songRepository.GetMusic();
+        }
     }
 }

@@ -42,6 +42,18 @@ namespace Video_sound.Repository
             sr.Close();
             return songs;
         }
+        public void DeleteAll()
+        {
+            File.WriteAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt", "");
+        }
+
+        public void DeleteSelected(string a)
+        {
+            string str = File.ReadAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt");
+            string str2 = "";
+            str = str.Replace(a, str2);
+            File.WriteAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt", str);
+        }
     }
 }
 

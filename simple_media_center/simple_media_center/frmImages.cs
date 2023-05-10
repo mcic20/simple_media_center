@@ -57,11 +57,15 @@ namespace simple_media_center
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string path = dgvPictures.SelectedCells[0].Value.ToString();
-            PictureRepository pictureRepository2 = new PictureRepository();
-            pictureRepository2.DeleteSelected(path);
-            List<Picture> pictures = pictureRepository2.GetPictures();
-            dgvPictures.DataSource = pictures;
+            try
+            {
+                string path = dgvPictures.SelectedCells[0].Value.ToString();
+                PictureRepository pictureRepository2 = new PictureRepository();
+                pictureRepository2.DeleteSelected(path);
+                List<Picture> pictures = pictureRepository2.GetPictures();
+                dgvPictures.DataSource = pictures;
+            }
+            catch { }
         }
     }
 }
