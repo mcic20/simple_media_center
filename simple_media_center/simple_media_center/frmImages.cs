@@ -8,14 +8,14 @@ namespace simple_media_center
         public frmImages()
         {
             InitializeComponent();
-            PictureRepository pictureRepository = new PictureRepository();
+            PictureRepository pictureRepository = new();
             List<Picture> pictures = pictureRepository.GetPictures();
             dgvPictures.DataSource = pictures;
         }
 
         private void btnAddPic_Click(object sender, EventArgs e)
         {
-            PictureRepository pictureRepository = new PictureRepository();
+            PictureRepository pictureRepository = new();
             pictureRepository.GetFile();
             List<Picture> pictures = pictureRepository.GetPictures();
             dgvPictures.DataSource = pictures;
@@ -40,7 +40,7 @@ namespace simple_media_center
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            frmMenu frmMenu = new frmMenu();
+            frmMenu frmMenu = new();
             Hide();
             frmMenu.ShowDialog();
             Close();
@@ -48,7 +48,7 @@ namespace simple_media_center
 
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
-            PictureRepository pictureRepository = new PictureRepository();
+            PictureRepository pictureRepository = new();
             pictureRepository.DeleteAll();
             pictureBox1.Image = null;
             List<Picture> pictures = pictureRepository.GetPictures();
@@ -60,7 +60,7 @@ namespace simple_media_center
             try
             {
                 string path = dgvPictures.SelectedCells[0].Value.ToString();
-                PictureRepository pictureRepository2 = new PictureRepository();
+                PictureRepository pictureRepository2 = new();
                 pictureRepository2.DeleteSelected(path);
                 List<Picture> pictures = pictureRepository2.GetPictures();
                 dgvPictures.DataSource = pictures;

@@ -17,7 +17,7 @@ namespace Video_sound
         public Music()
         {
             InitializeComponent();
-            MusicRepository musicRepository = new MusicRepository();
+            MusicRepository musicRepository = new();
             try
             {
                 dgvMusic.ItemsSource = musicRepository.GetMusic();
@@ -32,7 +32,7 @@ namespace Video_sound
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
-            MusicRepository songRepository = new MusicRepository();
+            MusicRepository songRepository = new();
             songRepository.AddMusic();
             List<Song> songs = songRepository.GetMusic();
             dgvMusic.ItemsSource = songs;
@@ -65,7 +65,7 @@ namespace Video_sound
             {
                 try
                 {
-                    Song song = new Song();
+                    Song song = new();
                     song = dgvMusic.SelectedItem as Song;
                     elementMusic.Source= new Uri(song.MusicPath);
                     txtSong.Text = song.Name;
@@ -78,24 +78,33 @@ namespace Video_sound
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            Song song = new Song();
+            Song song = new();
             song = dgvMusic.SelectedItem as Song;
-            string del = $"{song.Name};{song.MusicPath}";
-            MusicRepository musicRepository = new MusicRepository();
-            musicRepository.DeleteSelected(del);
-            dgvMusic.ItemsSource = musicRepository.GetMusic();
+           if (song != null) { 
+                string del = $"{song.Name};{song.MusicPath}";
+                MusicRepository musicRepository = new ();
+                musicRepository.DeleteSelected(del);
+                dgvMusic.ItemsSource = musicRepository.GetMusic();
+            }
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            MusicRepository songRepository = new MusicRepository();
+            MusicRepository songRepository = new();
             songRepository.DeleteAll();
             dgvMusic.ItemsSource = songRepository.GetMusic();
         }
 
         private void elementMusic_MediaOpened(object sender, RoutedEventArgs e)
         {
+            sliderMusic.Maximum = elementMusic.NaturalDuration.TimeSpan.TotalSeconds;
+        }
 
+        private void sliderMusic_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int SliderValue = (int)sliderMusic.Value;
+            TimeSpan ts = new (0, 0, 0, SliderValue, 0);
+            elementMusic.Position = ts;
         }
     }
 }

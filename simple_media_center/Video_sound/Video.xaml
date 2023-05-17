@@ -16,11 +16,8 @@
         <MediaElement x:Name="elementVideo" HorizontalAlignment="Left" Height="334" Margin="31,10,0,0" VerticalAlignment="Top" Width="741" UnloadedBehavior="Manual" Grid.ColumnSpan="2" MediaOpened="elementVideo_MediaOpened"/>
         <Slider x:Name="sliderVolume" HorizontalAlignment="Left" Margin="33,440,0,0" VerticalAlignment="Top" Width="120" ValueChanged="sliderVolume_ValueChanged"/>
         <Label x:Name="lvlVoumeStatic" Content="Volume:" HorizontalAlignment="Left" Margin="31,415,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtVolume" HorizontalAlignment="Left" Height="16" Margin="84,420,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="30" IsReadOnly="True"/>
+        <TextBox x:Name="txtVolume" HorizontalAlignment="Left" Height="16" Margin="84,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" IsReadOnly="True"/>
         <Slider x:Name="sliderTimeline" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="17" Margin="53,393,0,0" VerticalAlignment="Top" Width="694" ValueChanged="sliderTimeline_ValueChanged"/>
-        <TextBox x:Name="txtDuration" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="289,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="68"/>
-        <TextBox HorizontalAlignment="Left" Margin="36,370,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="53"/>
-        <TextBox x:Name="txtCurrentTime" HorizontalAlignment="Left" Margin="340,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

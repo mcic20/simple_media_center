@@ -22,9 +22,11 @@ namespace Video_sound
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Videos|*.mp4; *.mkv; *.webm; *.avi";
-            ofd.Multiselect = false;
+            OpenFileDialog ofd = new()
+            {
+                Filter = "Videos|*.mp4; *.mkv; *.webm; *.avi",
+                Multiselect = false
+            };
             ofd.ShowDialog();
             try
             {
@@ -68,16 +70,13 @@ namespace Video_sound
         private void elementVideo_MediaOpened(object sender, RoutedEventArgs e)
         {
             sliderTimeline.Maximum = elementVideo.NaturalDuration.TimeSpan.TotalSeconds;
-            txtDuration.Text = sliderTimeline.Maximum.ToString();
-            txtCurrentTime.Text = elementVideo.Position.TotalSeconds.ToString();
         }
 
         private void sliderTimeline_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             int SliderValue = (int)sliderTimeline.Value;
-            TimeSpan ts = new TimeSpan(0, 0, 0, SliderValue, 0);
+            TimeSpan ts = new(0, 0, 0, SliderValue, 0);
             elementVideo.Position = ts;
-            txtCurrentTime.Text = elementVideo.Position.TotalSeconds.ToString();
         }
     }
 }

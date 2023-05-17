@@ -14,30 +14,34 @@ namespace Video_sound.Repository
 
         public void AddMusic()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Music|*.mp3; *.flac; *.wav";
-            ofd.Multiselect = false;
+            OpenFileDialog ofd = new()
+            {
+                Filter = "Music|*.mp3; *.flac; *.wav",
+                Multiselect = false
+            };
             ofd.ShowDialog();
-            Song music = new Song();
-            music.MusicPath = ofd.FileName;
-            music.Name = ofd.SafeFileName;
+            Song music = new()
+            {
+                MusicPath = ofd.FileName,
+                Name = ofd.SafeFileName
+            };
             string newMusic = $"{music.Name};{music.MusicPath}";
-            MusicPath dataPath = new MusicPath();
+            MusicPath dataPath = new();
             File.AppendAllText(dataPath.GetPath("MusicPaths"), newMusic + Environment.NewLine);
         }
         public List<Song> GetMusic()
         {
-            List<Song> songs = new List<Song>();
-            MusicPath dataPath = new MusicPath();
+            List<Song> songs = new();
+            MusicPath dataPath = new();
             try
             {
-                StreamReader sr = new StreamReader(dataPath.GetPath("MusicPaths"));
+                StreamReader sr = new (dataPath.GetPath("MusicPaths"));
                 var lines = sr.ReadToEnd().Split("\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 var column1 = new List<string>();
                 var column2 = new List<string>();
                 foreach (var line in lines)
                 {
-                    Song music = new Song();
+                    Song music = new();
                     var values = line.Split(";");
                     column1.Add(values[0]);
                     column2.Add(values[1]);
@@ -50,19 +54,18 @@ namespace Video_sound.Repository
             }
             catch
             {
-                songs = null;
                 return songs;
             }
         }
         public void DeleteAll()
         {
-            MusicPath dataPath = new MusicPath();
+            MusicPath dataPath = new();
             File.WriteAllText(dataPath.GetPath("MusicPaths"), "");
         }
 
         public void DeleteSelected(string a)
         {
-            MusicPath dataPath = new MusicPath();
+            MusicPath dataPath = new();
             string str = File.ReadAllText(dataPath.GetPath("MusicPaths"));
             string str2 = "";
             str = str.Replace(a, str2);
