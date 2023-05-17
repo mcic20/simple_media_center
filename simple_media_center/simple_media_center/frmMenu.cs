@@ -13,7 +13,6 @@ namespace simple_media_center
             Hide();
             images.ShowDialog();
             Close();
-
         }
 
         private void btnVideo_Click(object sender, EventArgs e)

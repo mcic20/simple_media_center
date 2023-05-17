@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 
 
 namespace Video_sound
@@ -62,6 +63,21 @@ namespace Video_sound
                     btnPlay.Content = "||";
                 }
             }
-        }      
+        }
+
+        private void elementVideo_MediaOpened(object sender, RoutedEventArgs e)
+        {
+            sliderTimeline.Maximum = elementVideo.NaturalDuration.TimeSpan.TotalSeconds;
+            txtDuration.Text = sliderTimeline.Maximum.ToString();
+            txtCurrentTime.Text = elementVideo.Position.TotalSeconds.ToString();
+        }
+
+        private void sliderTimeline_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            int SliderValue = (int)sliderTimeline.Value;
+            TimeSpan ts = new TimeSpan(0, 0, 0, SliderValue, 0);
+            elementVideo.Position = ts;
+            txtCurrentTime.Text = elementVideo.Position.TotalSeconds.ToString();
+        }
     }
 }

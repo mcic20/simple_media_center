@@ -92,5 +92,10 @@ namespace Video_sound
             songRepository.DeleteAll();
             dgvMusic.ItemsSource = songRepository.GetMusic();
         }
+
+        private void elementMusic_MediaOpened(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
