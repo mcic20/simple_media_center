@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Video_sound"
         mc:Ignorable="d"
-        Title="Videos" Height="500" Width="800" WindowStartupLocation="CenterScreen" MouseWheel="windowVideo_MouseWheel">
-    <Grid Margin="0,0,0,-6" MouseWheel="Grid_MouseWheel">
+        Title="Videos" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,-6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="399*"/>
             <ColumnDefinition Width="401*"/>

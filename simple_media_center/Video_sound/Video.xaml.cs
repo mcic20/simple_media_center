@@ -62,34 +62,6 @@ namespace Video_sound
                     btnPlay.Content = "||";
                 }
             }
-        }
-
-        private void windowVideo_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
-        {
-            if(e.Delta > 0)
-            {
-                elementVideo.Volume = sliderVolume.Value+1;
-                txtVolume.Text = ((sliderVolume.Value) * 10).ToString();
-            }
-            else
-            {
-                elementVideo.Volume = sliderVolume.Value - 1;
-                txtVolume.Text = ((sliderVolume.Value) * 10).ToString();
-            }
-        }
-
-        private void Grid_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
-        {
-            if (e.Delta > 0)
-            {
-                elementVideo.Volume = sliderVolume.Value + 1;
-                txtVolume.Text = ((sliderVolume.Value) * 10).ToString();
-            }
-            else
-            {
-                elementVideo.Volume = sliderVolume.Value - 1;
-                txtVolume.Text = ((sliderVolume.Value) * 10).ToString();
-            }
-        }
+        }      
     }
 }
