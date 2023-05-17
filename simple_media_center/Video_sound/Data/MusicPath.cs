@@ -1,6 +1,13 @@
-﻿namespace simple_media_center.Data
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Video_sound.Data
 {
-    public class DataPath
+    public class MusicPath
     {
         public string GetPath(string a)
         {

@@ -8,14 +8,4 @@
     <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Data\MusicPaths.txt" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Data\MusicPaths.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>

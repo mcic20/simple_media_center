@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Video_sound.Data;
 using System.Windows.Forms;
 using Video_sound.Classes;
+
 
 namespace Video_sound.Repository
 {
@@ -20,39 +22,51 @@ namespace Video_sound.Repository
             music.MusicPath = ofd.FileName;
             music.Name = ofd.SafeFileName;
             string newMusic = $"{music.Name};{music.MusicPath}";
-            File.AppendAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt", newMusic + Environment.NewLine);
+            MusicPath dataPath = new MusicPath();
+            File.AppendAllText(dataPath.GetPath("MusicPaths"), newMusic + Environment.NewLine);
         }
         public List<Song> GetMusic()
         {
             List<Song> songs = new List<Song>();
-            StreamReader sr = new StreamReader("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt");
-            var lines = sr.ReadToEnd().Split("\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-            var column1 = new List<string>();
-            var column2 = new List<string>();
-            foreach (var line in lines)
+            MusicPath dataPath = new MusicPath();
+            try
             {
-                Song music = new Song();
-                var values = line.Split(";");
-                column1.Add(values[0]);
-                column2.Add(values[1]);
-                music.Name = column1.FirstOrDefault();
-                music.MusicPath = column2.FirstOrDefault();
-                songs.Add(music);
+                StreamReader sr = new StreamReader(dataPath.GetPath("MusicPaths"));
+                var lines = sr.ReadToEnd().Split("\r\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                var column1 = new List<string>();
+                var column2 = new List<string>();
+                foreach (var line in lines)
+                {
+                    Song music = new Song();
+                    var values = line.Split(";");
+                    column1.Add(values[0]);
+                    column2.Add(values[1]);
+                    music.Name = column1.FirstOrDefault();
+                    music.MusicPath = column2.FirstOrDefault();
+                    songs.Add(music);
+                }
+                sr.Close();
+                return songs;
             }
-            sr.Close();
-            return songs;
+            catch
+            {
+                songs = null;
+                return songs;
+            }
         }
         public void DeleteAll()
         {
-            File.WriteAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt", "");
+            MusicPath dataPath = new MusicPath();
+            File.WriteAllText(dataPath.GetPath("MusicPaths"), "");
         }
 
         public void DeleteSelected(string a)
         {
-            string str = File.ReadAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt");
+            MusicPath dataPath = new MusicPath();
+            string str = File.ReadAllText(dataPath.GetPath("MusicPaths"));
             string str2 = "";
             str = str.Replace(a, str2);
-            File.WriteAllText("C:\\Users\\Mateo\\source\\repos\\simple_media_center\\simple_media_center\\Video_sound\\Data\\MusicPaths.txt", str);
+            File.WriteAllText(dataPath.GetPath("MusicPaths"), str);
         }
     }
 }
